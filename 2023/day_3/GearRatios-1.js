@@ -3,37 +3,28 @@
 const isNumberRegex = /\d/
 
 const lookForSurroundingSymbols = (myInput, row, col) => {
-  // console.log('ent', testInput[row][col])
   if (col - 1 >= 0 && myInput[row][col - 1] !== '.' && !isNumberRegex.test(myInput[row][col - 1])) {
-    // console.log(myInput[row][col - 1])
     return true
   }
   if (col + 1 < myInput[row].length && myInput[row][col + 1] !== '.' && !isNumberRegex.test(myInput[row][col + 1])) {
-    // console.log('y', myInput[row][col + 1])
     return true
   }
   if (col - 1 >= 0 && row - 1 >= 0 && myInput[row - 1][col - 1] !== '.' && !isNumberRegex.test(myInput[row - 1][col - 1])) {
-    // console.log(myInput[row - 1][col - 1])
     return true
   }
   if (row - 1 >= 0 && col + 1 < myInput[row].length && myInput[row - 1][col + 1] !== '.' && !isNumberRegex.test(myInput[row - 1][col + 1])) {
-    // console.log(myInput[row - 1][col + 1])
     return true
   }
   if (row + 1 < myInput.length && col - 1 >= 0 && myInput[row + 1][col - 1] !== '.' && !isNumberRegex.test(myInput[row + 1][col - 1])) {
-    // console.log(myInput[row + 1][col - 1])
     return true
   }
   if (row + 1 < myInput.length && col + 1 < myInput[row + 1].length && myInput[row + 1][col + 1] !== '.' && !isNumberRegex.test(myInput[row + 1][col + 1])) {
-    // console.log(myInput[row + 1][col + 1])
     return true
   }
   if (row - 1 >= 0 && myInput[row - 1][col] !== '.' && !isNumberRegex.test(myInput[row - 1][col])) {
-    // console.log(myInput[row - 1][col])
     return true
   }
   if (row + 1 < myInput.length && myInput[row + 1][col] !== '.' && !isNumberRegex.test(myInput[row + 1][col])) {
-    // console.log(myInput[row + 1][col])
     return true
   }
   return false
@@ -60,7 +51,7 @@ const countAllLinkedNumbers = (currInput) => {
       }
     }
   }
-  console.log(sum)
+  console.log("sum:" sum)
 }
 
 const fs = require("fs")
